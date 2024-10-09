@@ -1,4 +1,4 @@
-import { ClassRoom } from "./classroom.js";
+import ClassRoom from './0-classroom.js';
 
 export function initializeRooms() {
   const class1 = new ClassRoom(19);
