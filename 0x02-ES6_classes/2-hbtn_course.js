@@ -26,7 +26,7 @@ export default class HolbertonCourse {
   }
   set length(length) {
     if (typeof this.length === "number") this._length = length;
-  }length
+  }
 
   get students() {
     return this._students;
