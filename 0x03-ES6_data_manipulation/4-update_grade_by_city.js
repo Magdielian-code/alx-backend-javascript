@@ -65,3 +65,23 @@ const averaged = Numbers.filter((numbers) => numbers > 0).map(
   }
 );
 console.log(averaged);
+
+const arrayLike = {
+  length: 4,
+  0: "foo",
+  1: "bar",
+  2: "baz",
+  3: 2,
+  4: 3,
+  5: 4,
+};
+
+const arrayLikeArray = Array.from(arrayLike);
+const arrayLikeArray2 = Object.entries(arrayLike).map(([key, value]) => {
+  if (typeof value === "string") {
+    return [key, "changed"];
+  }
+  return [key, value];
+});
+console.log(arrayLikeArray2);
+console.log(Object.fromEntries(arrayLikeArray2));
