@@ -32,14 +32,36 @@ const withTax = cart.map((cost) => {
 console.log(withTax);
 console.log(total);
 
-const product = [
-    { name: "apples", price: 2 },
-    { name: "oranges", price: 3 },
-    { name: "bananas", price: 1 },
-]
+const products = [
+  { name: "apples", price: 2 },
+  { name: "oranges", price: 3 },
+  { name: "bananas", price: 1 },
+];
 
-product.map((product) => {
-    return {...product, price: `${product.price}` + 100};
-})
+const updatedProducts = products.map((product) => {
+  return { ...product, price: `${product.price + 100}` };
+});
 
-console.log(product);
+console.log(updatedProducts);
+
+const Numbers = [1, 4, 6, -7, -2, 5, 7, -9, 4];
+const averaged = Numbers.filter((numbers) => numbers > 0).map(
+  (numbers, index, arr) => {
+    const prev = arr[index - 1];
+    const next = arr[index + 1];
+
+    let count = 1;
+    let total = numbers;
+    if (prev !== undefined) {
+      count++;
+      total += prev;
+    }
+    if (next !== undefined) {
+      count++;
+      total += next;
+    }
+    const average = total / count;
+    return Math.round((average * 100) / 100);
+  }
+);
+console.log(averaged);
