@@ -1,45 +1,18 @@
-interface Student {
-  firstname: string;
-  lastname: string;
-  age: number;
-  location: string;
-}
+import { RowID, RowElement } from "../interface";
+import * as crud from "./crud";
 
-const student1: Student = {
-  firstname: "Ozioma",
-  lastname: "Chukwuka",
-  age: 20,
-  location: "Lagos",
+const row: RowElement = {
+  firstName: "Guillaume",
+  lastName: "Salva",
 };
 
-const student2: Student = {
-  firstname: "David",
-  lastname: "Oluwafemi",
-  age: 21,
-  location: "Abuja",
+const newRowID: RowID = crud.insertRow(row);
+
+const updateRow: RowElement = {
+  firstName: "Guillaume",
+  lastName: "Salva",
+  age: 23,
 };
 
-const studentsList: Student[] = [student1, student2];
-
-document.addEventListener("DOMContentLoaded", () => {
-  const table = document.createElement("table");
-
-  studentsList.forEach((student) => {
-    const row = table.insertRow();
-    const cell1 = row.insertCell(0);
-    const cell2 = row.insertCell(1);
-    cell1.textContent = student.firstname;
-    cell2.textContent = student.lastname;
-  });
-
-  document.body.appendChild(table);
-});
-
-let names: string[] = [];
-names.push("John", "Doe");
-
-let mixed: (string | number)[] = [];
-mixed.push("John", "Doe");
-mixed.push(23)
-
-let ninja1: object;
+crud.updateRow(newRowID, updateRow);
+crud.deleteRow(newRowID);
