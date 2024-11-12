@@ -35,11 +35,3 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(table);
 });
 
-let names: string[] = [];
-names.push("John", "Doe");
-
-let mixed: (string | number)[] = [];
-mixed.push("John", "Doe");
-mixed.push(23)
-
-let ninja1: object;

@@ -16,3 +16,26 @@ const updateRow: RowElement = {
 
 crud.updateRow(newRowID, updateRow);
 crud.deleteRow(newRowID);
+ 
+interface Shape {
+  getArea(): number;
+}
+
+class Rectangle implements Shape {
+  public constructor(
+    protected readonly width: number,
+    protected readonly height: number
+  ) {}
+
+  public getArea(): number {
+    return this.width * this.height;
+  }
+}
+
+class Circle implements Shape {
+  public constructor(protected readonly radius: number) {}
+
+  public getArea(): number {
+    return Math.PI * this.radius ** 2;
+  }
+}
